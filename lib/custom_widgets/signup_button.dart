@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:we_discover/constants/color_constants.dart';
 import 'package:we_discover/constants/style_constants.dart';
 
 class SignupButton extends StatelessWidget {
   final String? text;
-  const SignupButton({this.text});
+  void Function()? onpressed;
+   SignupButton({this.text,this.onpressed});
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-        onPressed: () {},
+        onPressed: onpressed,
         style: OutlinedButton.styleFrom(
           shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              borderRadius: BorderRadius.all(Radius.circular(30.0))),
           side: const BorderSide(color: Colors.green),
         ),
         child: Center(
@@ -21,19 +21,23 @@ class SignupButton extends StatelessWidget {
 }
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({Key? key}) : super(key: key);
+  String? title;
+  Color? colour;
+  TextStyle? style;
+  void Function()? onpressed;
+  LoginButton({this.title, this.colour, this.style,this.onpressed});
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: headlinecolor,
+      color: colour,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10.0))),
-      onPressed: () {},
-      child: const Center(
+          borderRadius: BorderRadius.all(Radius.circular(30.0))),
+      onPressed: onpressed,
+      child: Center(
           child: Text(
-        'Sign Up',
-        style: signupText,
+        title.toString(),
+        style: style,
       )),
     );
   }

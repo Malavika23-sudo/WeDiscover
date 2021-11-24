@@ -5,20 +5,23 @@ class DividerForOr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: const [
-          Divider(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Expanded(
+          child: Divider(
             height: 30,
             color: Colors.white,
           ),
-          Text('Or'),
-          Divider(
+        ),
+        Text('Or,sign Up With'),
+        Expanded(
+          child: Divider(
             height: 30,
             color: Colors.white,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

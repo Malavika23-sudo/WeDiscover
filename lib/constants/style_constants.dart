@@ -11,3 +11,8 @@ const signupText = TextStyle(
   color: colorDotactivecolor,
   fontWeight: FontWeight.bold,
 );
+
+const signupText2 = TextStyle(
+  color: Colors.green,
+  fontWeight: FontWeight.bold,
+);
